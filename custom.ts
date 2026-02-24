@@ -76,6 +76,15 @@ namespace rb0base {
         return getPinFromKeyestudioPort(port as number, 1);
     }
 
+    export function isAnalogPin(pin: DigitalPin): boolean {
+        return (pin === DigitalPin.P0
+                || pin === DigitalPin.P1
+                || pin === DigitalPin.P2
+                || pin === DigitalPin.P3
+                || pin === DigitalPin.P4
+                || pin === DigitalPin.P10);
+    }
+
     export function enablePin(pin: DigitalPin): void {
         if (pin === DigitalPin.P3
             || pin === DigitalPin.P4
