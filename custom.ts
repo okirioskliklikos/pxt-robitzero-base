@@ -19,10 +19,14 @@ enum KeyestudioPort {
     P9
 }
 
-type KeyestudioAnalogPort =
-    | KeyestudioPort.P0
-    | KeyestudioPort.P1P2
-    | KeyestudioPort.P10;
+enum KeyestudioAnalogPort {
+    //% block="P0"
+    P0 = KeyestudioPort.P0,
+    //% block="P1/P2"
+    P1P2 = KeyestudioPort.P1P2,
+    //% block="P10"
+    P10 = KeyestudioPort.P10
+}
 
 namespace rb0base {
 
@@ -66,6 +70,10 @@ namespace rb0base {
 
             return DigitalPin.P0;
         }
+    }
+
+    export function getPinFromKeyestudioAnalogPort(port: KeyestudioAnalogPort): DigitalPin {
+        return getPinFromKeyestudioPort(port as number, 1);
     }
 
     export function enablePin(pin: DigitalPin): void {
