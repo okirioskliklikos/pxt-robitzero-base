@@ -19,6 +19,11 @@ enum KeyestudioPort {
     P9
 }
 
+type KeyestudioAnalogPort =
+    | KeyestudioPort.P0
+    | KeyestudioPort.P1P2
+    | KeyestudioPort.P10;
+
 namespace rb0base {
 
     /* 
